@@ -1,0 +1,39 @@
+﻿@model LoginForm
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<div class="col-md-6">
+    @*@using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, null, new { @class = "control-label" })
+                @Html.EditorFor(model => model.Email, null, null, new { htmlAttributes = new { @class = "form-control", placeholder = "john.doe@unknow.com" } })
+                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Passwd, null, new { @class = "control-label" })
+                @Html.EditorFor(model => model.Passwd, null, null, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Passwd, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="form-control btn btn-primary" />
+            </div>
+        }*@
+    <form asp-action="Login" asp-controller="Auth" method="post">
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Passwd" class="control-label"></label>
+            <input asp-for="Passwd" class="form-control" />
+            <span asp-validation-for="Passwd" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Login" class="form-control btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
